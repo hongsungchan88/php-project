@@ -1,0 +1,206 @@
+/* ---------------------------------------------------- */
+/* --- 2024.06.18 추가된 추천 스타일 (New Styles) --- */
+/* ---------------------------------------------------- */
+
+/* 기본 폰트 크기 및 색상 재설정으로 가독성 향상 */
+body {
+    font-size: 14px; /* 기본 폰트 크기를 약간 키워 가독성을 높입니다. */
+    color: #333; /* 기본 글자색을 좀 더 진하게 조정합니다. */
+    letter-spacing: -0.5px;
+}
+
+/* 링크 스타일 */
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* 부드러운 색상 전환 효과 */
+}
+a:hover {
+    color: #007bff; /* 호버 시 색상을 프라이머리 색상으로 변경 */
+}
+
+/* 상단 사용자 메뉴 스타일 */
+header .nav-link {
+    transition: background-color 0.2s ease-in-out;
+}
+header .nav-link:hover {
+    color: #007bff;
+    background-color: #f8f9fa; /* 호버 시 배경색을 살짝 추가 */
+    border-radius: 4px;
+}
+
+/* 메인 네비게이션 바 스타일 */
+#mainNavbar .navbar-nav .nav-link {
+    font-size: 1.1rem; /* 16px */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+}
+
+/* 기존 zoom_a 효과와 통합 */
+.zoom_a .nav-link {
+    transition: color 0.3s, transform 0.3s;
+}
+.zoom_a:hover .nav-link {
+    color: #f49300;
+    transform: translateY(-2px); /* 살짝 위로 이동하는 효과 */
+}
+
+/* 검색창 버튼 스타일 */
+form[name="form_search"] .btn {
+    /* 아이콘만 있는 버튼이므로 크기를 텍스트 입력창과 맞춥니다. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 슬라이드 이미지 하단에 여백 추가 */
+#carouselExampleIndicators {
+    margin-bottom: 2rem;
+}
+/* ---------------------------------------------------- */
+/* --- 상품 카드 (Product Card) 추천 스타일 --- */
+/* ---------------------------------------------------- */
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 카드에 마우스를 올리면 살짝 위로 올라가며 그림자가 커지는 효과 */
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 상품 카드 이미지 비율 유지 및 줌 효과 */
+.product-card .card-img-top {
+    aspect-ratio: 1 / 1; /* 이미지를 1:1 정사각형 비율로 유지 */
+    object-fit: cover;   /* 이미지가 잘리지 않고 채워지도록 설정 */
+    transition: transform 0.3s ease;
+}
+.product-card:hover .card-img-top {
+    transform: scale(1.05); /* 마우스 호버 시 이미지 살짝 확대 */
+}
+
+/* 상품명 스타일 */
+.product-card .card-title {
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    /* 두 줄 이상 넘어갈 경우 말줄임표(...) 처리 */
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.5em; /* 2줄 높이 */
+}
+
+/* stretched-link가 카드 전체를 덮도록 설정 */
+.product-card .stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}
+/* ---------------------------------------------------- */
+/* --- 푸터 (Footer) 추천 스타일 --- */
+/* ---------------------------------------------------- */
+
+.footer {
+    line-height: 1.8; /* 줄 간격을 넓혀 가독성을 높입니다. */
+}
+
+/* 푸터 내 링크 기본 스타일 */
+.footer .footer-link {
+    color: #adb5bd; /* 기본 링크 색상을 밝은 회색으로 설정 */
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 푸터 내 링크 호버 스타일 */
+.footer .footer-link:hover {
+    color: #ffffff; /* 마우스를 올리면 흰색으로 변경 */
+    padding-left: 5px; /* 왼쪽 여백을 주어 들여쓰기 효과 */
+}
+
+/* 파트너사 로고 이미지 스타일 */
+.footer img[alt="공정거래위원회"],
+.footer img[alt="서울보증보험"] {
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+.footer img[alt="공정거래위원회"]:hover,
+.footer img[alt="서울보증보험"]:hover {
+    opacity: 1; /* 마우스를 올리면 선명하게 변경 */
+}
+/* --- 주문 진행(Progress) 바 스타일 --- */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #adb5bd; /* 비활성 색상 */
+    width: 80px;
+}
+.progress-step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #adb5bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+.progress-step-text {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+.progress-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #dee2e6;
+}
+
+/* 활성화된 단계 스타일 */
+.progress-step.active {
+    color: #0d6efd; /* 부트스트랩 Primary 색상 */
+    font-weight: bold;
+}
+.progress-step.active .progress-step-icon {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* 완료된 단계 스타일 */
+.progress-step.done {
+    color: #198754; /* 부트스트랩 Success 색상 */
+}
+.progress-step.done .progress-step-icon {
+    background-color: #198754;
+    border-color: #198754;
+    color: #fff;
+}
+.progress-step.done .progress-line-pre {
+    background-color: #198754;
+}
+
+/* 탭 메뉴 스타일 */
+.nav-pills .nav-link {
+    color: #6c757d;
+}
+.nav-pills .nav-link.active {
+    background-color: #343a40;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
